@@ -14,15 +14,17 @@ const GithubScraper = ({ username, repository, branch, children }) => {
         setContent({...newContent})
     }
 
-    return (<GithubScraperSourceContext.Provider value={{username, repository, branch}}>
-        <GithubScraperContext.Provider value={{
-            content, 
-            setContentKey, 
-            githubAPI: new GithubAPI(username, repository, branch)
-        }}>
-            {children}
-        </GithubScraperContext.Provider>
-    </GithubScraperSourceContext.Provider>)
+    return (<span className='github-scraper'>
+        <GithubScraperSourceContext.Provider value={{username, repository, branch}}>
+            <GithubScraperContext.Provider value={{
+                content, 
+                setContentKey, 
+                githubAPI: new GithubAPI(username, repository, branch)
+            }}>
+                {children}
+            </GithubScraperContext.Provider>
+        </GithubScraperSourceContext.Provider>
+    </span>)
 }
 
 GithubScraper.defaultProps = {

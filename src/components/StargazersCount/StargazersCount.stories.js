@@ -1,11 +1,11 @@
 import React from 'react';
 
-import { Languages } from '../../.';
-import GithubScraper from '../../.'
+import { StargazersCount } from '../..';
+import GithubScraper from '../..'
 
 export default {
-  title: 'Languages/Languages',
-  component: Languages,
+  title: 'StargazersCount/StargazersCount',
+  component: StargazersCount,
   argTypes: {
     showChars: { control: 'number' }
   },
@@ -15,7 +15,7 @@ const Template = (args) => {
     return (<>
         <div style={{width: '300px'}}>
             <GithubScraper {...args.github}>
-                <Languages {...args.component} />
+                <StargazersCount {...args.component} />
             </GithubScraper>
         </div>
     </>)
@@ -29,7 +29,7 @@ Primary.args = {
         branch:'master',
     },
     component: {
-        label: 'Test'
+        label: 'Stargazers count',
     }
 };
 
@@ -41,5 +41,6 @@ Secondary.args = {
         branch:'master',
     },
     component: {
+        prefix: null,
     }
 };

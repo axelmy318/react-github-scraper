@@ -1,13 +1,14 @@
 import React, { useContext } from 'react'
 import { fetchURL } from '../../functions/fetchURL'
 import { GithubScraperContext } from '../../.'
+import '../index.css'
 
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-const Languages = ({ maxLanguages }) => {
+const Languages = ({ label, maxLanguages }) => {
     const CONTENT_KEY = `languages`
     let {content, setContentKey, githubAPI} = useContext(GithubScraperContext)
     githubAPI.setContentKey(CONTENT_KEY)
@@ -49,16 +50,17 @@ const Languages = ({ maxLanguages }) => {
         }
     }
 
-    return (<>
+    return (<div className='github-scraper-component'>
         {content[CONTENT_KEY] !== null && content[CONTENT_KEY].success && <>
-            <Pie data={getPieChartData()} width={'100px'} />
-            {Object.keys(content[CONTENT_KEY].data).map(language => <p key={language}>{language} = {content[CONTENT_KEY].data[language]}</p>)}
+            {label && <div className='github-scraper-component-label'>{label}</div>}
+            <Pie data={getPieChartData()} />
         </>}
-    </>)
+    </div>)
 }
 
 Languages.defaultProps = {
-    maxLanguages: 7
+    label: null,
+    maxLanguages: 7,
 }
 
 export default Languages
