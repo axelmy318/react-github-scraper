@@ -1,0 +1,1 @@
+export { fetchURL } from './fetchURL'
