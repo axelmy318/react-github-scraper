@@ -1,5 +1,5 @@
 {
-  "name": "react-github-scaper",
+  "name": "react-github-scraper",
   "version": "0.0.1",
   "description": "Provides multiple customizable components to display data about a github repository using simply the repository name",
   "scripts": {
