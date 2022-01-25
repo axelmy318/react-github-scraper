@@ -15,6 +15,8 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "@babel/core": "^7.16.10",
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-react": "^7.16.7",
@@ -31,13 +33,14 @@
     "rollup": "^2.65.0",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
-    "rollup-plugin-postcss": "^4.0.2"
+    "rollup-plugin-postcss": "^4.0.2",
+    "axios": "^0.25.0"
   },
   "peerDependencies": {
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "axios": "^0.25.0",
-    "react-icons": "^4.3.1"
+    "react-icons": "^4.3.1",
+    "axios": "^0.25.0"
   },
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -68,5 +71,9 @@
     "jsx",
     "convert",
     "convert-to-jsx"
-  ]
+  ],
+  "dependencies": {
+    "axios": "^0.25.0",
+    "storybook": "^6.4.14"
+  }
 }

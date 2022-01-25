@@ -1,5 +1,5 @@
-import React, { useContext } from 'react'
+import React, { createContext } from 'react'
 
-const GithubScraperContext = useContext({username: '', repository: '', branch: ''})
+const GithubScraperContext = createContext({username: '', repository: '', branch: ''})
 
 export default GithubScraperContext
