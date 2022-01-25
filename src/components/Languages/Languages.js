@@ -4,21 +4,16 @@ import GithubScraperContext from '../GithubScraperContext'
 
 const Languages = () => {
     let gsContext = useContext(GithubScraperContext)
-    console.log('test')
-    console.log(gsContext)
 
     const [languages, setLanguages] = useState(null)
+    const URL = `https://api.github.com/repos/${gsContext.username}/${gsContext.repository}/languages`
 
     if(languages === null)
-        fetchURL(`https://api.github.com/repos/${gsContext.username}/${gsContext.repository}/languages`)
-            .then(response => {
-                if(response.success)
-                    setLanguages(response.data)
-            })
+        fetchURL(URL, setLanguages)
 
     return (<>
-        {languages && <>
-            {Object.keys(languages).map(language => <p>{language} = {languages[language]},</p>)}
+        {languages !== null && languages.success && <>
+            {Object.keys(languages.data).map(language => <p key={language}>{language} = {languages.data[language]},</p>)}
         </>}
     </>)
 }

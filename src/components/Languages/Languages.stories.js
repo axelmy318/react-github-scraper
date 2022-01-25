@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Languages from '../Languages/Languages';
+import Languages from './Languages';
 import GsContext from '../GithubScraperContext/GithubScraperContext';
 
 export default {
@@ -13,7 +13,7 @@ export default {
 
 const Template = (args) => {
     return (<>
-        <GsContext.Provider value={...args}>
+        <GsContext.Provider value={{...args}}>
             <Languages />
         </GsContext.Provider>
     </>)
@@ -22,13 +22,13 @@ const Template = (args) => {
 export const Primary = Template.bind({});
 Primary.args = {
     username:'axelmy318',
-    repository:'react-weekdays-input' ,
+    repository:'react-weekdays-input',
     branch:'master',
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
     username:'axelmy318',
-    repository:'react-readme-printer' ,
+    repository:'react-readme-printer',
     branch:'master',
 };
