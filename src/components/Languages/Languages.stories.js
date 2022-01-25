@@ -21,8 +21,8 @@ const Template = (args) => {
 
 export const Primary = Template.bind({});
 Primary.args = {
-    username:'axelmy318',
-    repository:'react-weekdays-input',
+    username:'grpc',
+    repository:'grpc',
     branch:'master',
 };
 

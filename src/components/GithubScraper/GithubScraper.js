@@ -1,5 +1,6 @@
-import React, { useState, useContext } from 'react'
-import { GithubScraperSourceContext, GithubScraperContext } from '../.'
+import React, { useState } from 'react'
+import { GithubScraperSourceContext, GithubScraperContext } from '../../.'
+import GithubAPI from '../GithubScraper/GithubAPI'
 
 const GithubScraper = ({ username, repository, branch, children }) => {
     const [ content, setContent ] = useState({
@@ -14,10 +15,20 @@ const GithubScraper = ({ username, repository, branch, children }) => {
     }
 
     return (<GithubScraperSourceContext.Provider value={{username, repository, branch}}>
-        <GithubScraperContext.Provider value={{content, setContentKey}}>
+        <GithubScraperContext.Provider value={{
+            content, 
+            setContentKey, 
+            githubAPI: new GithubAPI(username, repository, branch)
+        }}>
             {children}
         </GithubScraperContext.Provider>
     </GithubScraperSourceContext.Provider>)
+}
+
+GithubScraper.defaultProps = {
+    username: '',
+    repository: '',
+    branch: ''
 }
 
 export default GithubScraper

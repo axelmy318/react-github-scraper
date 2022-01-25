@@ -2,7 +2,8 @@ import React, { createContext } from 'react'
 
 const GithubScraperContext = createContext({
     content: {},
-    setContentKey: () => {}
+    setContentKey: () => {},
+    githubAPI: null
 })
 
 export default GithubScraperContext
