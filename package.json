@@ -1,6 +1,6 @@
 {
   "name": "react-github-scraper",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "description": "Provides multiple customizable components to display data about a github repository using simply the repository name",
   "scripts": {
     "rollup": "rollup -c",
@@ -68,14 +68,9 @@
     "react",
     "reactjs",
     "readme",
-    "markdown",
-    "md",
-    "load",
-    "print",
-    "markdown-to-jsx",
-    "jsx",
-    "convert",
-    "convert-to-jsx"
+    "github-api",
+    "axios",
+    "repositories"
   ],
   "dependencies": {
     "axios": "^0.25.0",

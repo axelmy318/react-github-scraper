@@ -2,3 +2,21 @@
     font-size: 130%;
     font-weight: bold;
 }
+
+.component-topics .github-scraper-component-content {
+    border-collapse: collapse;
+    box-sizing: border-box;
+    display: block;
+    line-height: 18px;
+    overflow-wrap: break-word;
+}
+
+.github-scraper-topic {
+    margin: 3px;
+    display: inline-block;
+    background-color: rgba(56, 138, 253, 0.301);
+    color: #436388;
+    border-radius: 20px;
+    padding: 5px 10px;
+    font-size: 70%;
+}
