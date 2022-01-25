@@ -7,7 +7,7 @@ Provides multiple customizable components to automatically load and display GitH
 
 ## Demo 👀
 
-[https://axelmy-projects-showcase.firebaseapp.com/react-readme-printer]https://axelmy-projects-showcase.firebaseapp.com/react-readme-printer (...with code 😉)
+[https://axelmy-projects-showcase.firebaseapp.com/react-github-scraper]https://axelmy-projects-showcase.firebaseapp.com/react-github-scraper (...with code 😉)
 
 
 ## Usage 💻
