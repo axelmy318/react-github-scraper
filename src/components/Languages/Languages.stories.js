@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Languages from './Languages';
-import GsContext from '../GithubScraperContext/GithubScraperContext';
+import { Languages } from '../../.';
+import { GithubScraperContext as GsContext } from '../../.';
 
 export default {
   title: 'Languages/Languages',
