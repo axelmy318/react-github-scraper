@@ -1,19 +1,20 @@
 import React, { useState, useContext } from 'react'
 import { fetchURL } from '../../functions/fetchURL'
-import GithubScraperContext from '../GithubScraperContext'
+import { GithubScraperSourceContext } from '../GithubScraperContext'
 
 const Languages = () => {
-    let gsContext = useContext(GithubScraperContext)
+    let GSSource = useContext(GithubScraperSourceContext)
+    console.log(GSSource)
 
     const [languages, setLanguages] = useState(null)
-    const URL = `https://api.github.com/repos/${gsContext.username}/${gsContext.repository}/languages`
+    const URL = `https://api.github.com/repos/${GSSource.username}/${GSSource.repository}/languages`
 
     if(languages === null)
         fetchURL(URL, setLanguages)
 
     return (<>
         {languages !== null && languages.success && <>
-            {Object.keys(languages.data).map(language => <p key={language}>{language} = {languages.data[language]},</p>)}
+            {Object.keys(languages.data).map(language => <p key={language}>{language} = {languages.data[language]}</p>)}
         </>}
     </>)
 }

@@ -1,3 +1,5 @@
 export { default as GithubScraperContext } from './GithubScraperContext'
+export { GithubScraper } from './GithubScraperContext'
+export { GithubScraperSourceContext } from './GithubScraperContext'
 export { default as Languages } from './Languages'
 export { default as Repository } from './Repository'

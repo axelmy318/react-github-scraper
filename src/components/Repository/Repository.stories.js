@@ -1,11 +1,11 @@
 import React from 'react';
+import { Repository } from '..';
 
-import { Languages } from '../..';
-import { GithubScraperContext as GSContext } from '../..';
+import GSContext from '../GithubScraperContext/GithubScraperContext'
 
 export default {
-  title: 'Languages/Languages',
-  component: Languages,
+  title: 'Repository/Repository',
+  component: Repository,
   argTypes: {
     showChars: { control: 'number' }
   },
@@ -14,7 +14,9 @@ export default {
 const Template = (args) => {
     return (<>
         <GSContext.Provider value={{...args}}>
-            <Languages />
+            <Repository>
+                test
+            </Repository>
         </GSContext.Provider>
     </>)
 };

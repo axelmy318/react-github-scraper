@@ -1,17 +1,16 @@
 import React, { useContext } from 'react'
 import { GithubScraperContext } from '..'
 
-const Repository = () => {
-    const [GSContext, setGSContext] = useContext(GithubScraperContext)
+const Repository = ({ children }) => {
+    const { GSContext, setGSContext } = useContext(GithubScraperContext)
 
-    const [languages, setLanguages] = useState(null)
-    const URL = `https://api.github.com/repos/${gsContext.username}/${gsContext.repository}/repos`
+    const URL = `https://api.github.com/repos/${GSContext.username}/${GSContext.repository}/repos`
 
     if(languages === null)
-        fetchURL(URL, setLanguages)
+        fetchURL(URL, (val) => setGSContext({data: val.data, ...GSContext}))
         
     return (<>
-        {console.log(GSContext)}
+        {children}
     </>)
 }
 
