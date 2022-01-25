@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Languages } from '../../.';
-import { GithubScraper } from '../../.'
+import GithubScraper from '../../.'
 
 export default {
   title: 'Languages/Languages',

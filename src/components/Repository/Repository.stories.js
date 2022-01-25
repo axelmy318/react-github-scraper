@@ -1,7 +1,7 @@
 import React from 'react';
 import { Repository } from '..';
 
-import GSContext from '../GithubScraperContext/GithubScraperContext'
+import {GithubScraperContext as GSContext} from '../.'
 
 export default {
   title: 'Repository/Repository',

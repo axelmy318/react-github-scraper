@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { GithubScraperContext } from '..'
+import {GithubScraperContext} from '../.'
 
 const Repository = ({ children }) => {
     const { GSContext, setGSContext } = useContext(GithubScraperContext)
