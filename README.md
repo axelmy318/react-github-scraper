@@ -12,8 +12,23 @@ Provides multiple customizable components to automatically load and display GitH
 
 ## Usage 💻
 
-```javacsript
-    coming soon
+```javascript
+import GithubScraper, { Languages, StargazersCount } from 'react-github-scraper';
+
+const Example = () => {
+    return (
+        <GithubScraper 
+            username='axelmy318' 
+            repository='react-github-scraper' 
+            branch='master'
+        >
+            <Languages label='Languages' />
+            <StargazersCount label='Star count' />
+        </GithubScraper>
+    )
+}
+
+export default Example
 ```
 
 ## API ✔
