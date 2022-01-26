@@ -29,7 +29,8 @@ Primary.args = {
         branch:'master',
     },
     component: {
-        label: 'Test'
+        label: 'Test',
+        maxDisplayed: 9
     }
 };
 

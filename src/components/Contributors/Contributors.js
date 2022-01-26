@@ -35,7 +35,9 @@ const Contributors = ({ label, maxDisplayed }) => {
                 })}
 
                 {getContributorsWithLimit().length < content[CONTENT_KEY].data.length && <>
-                    <button onClick={() => setShowMore(true)}>Show more</button>
+                    <button onClick={() => setShowMore(true)}>
+                        {`${content[CONTENT_KEY].data.length-getContributorsWithLimit().length} more...`}
+                    </button>
                 </>}
             </div>
         </>}
