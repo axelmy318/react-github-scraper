@@ -26,6 +26,7 @@ const Contributors = ({ label, imageSize, maxDisplayed, showAvatar, showHandle }
         return content[CONTENT_KEY].data.slice(0, maxDisplayed)
     }
 
+
     return (<div className='github-scraper-component component-contributors'>
         {content[CONTENT_KEY] !== null && content[CONTENT_KEY].success && <>
             {label && <div className='github-scraper-component-label'>{label}</div>}
@@ -54,8 +55,12 @@ Contributors.defaultProps = {
 }
 
 const ContributorMiniature = ({ data, imageSize, showAvatar, showHandle }) => {
+    const sendToLink = url => {
+        window.open(url, '_blank').focus();
+    }
+
     return (<>
-        <div key={data.id} className='contributor-miniature'>
+        <div key={data.id} className='contributor-miniature clickable' onClick={() => sendToLink(data.html_url)}>
             {showAvatar && <div className='contributor-miniature-image'><img src={data.avatar_url} width={imageSize} /></div>}
             {showHandle && <div className='contributor-miniature-username'>{data.login}</div>}
         </div>
