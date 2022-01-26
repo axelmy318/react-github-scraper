@@ -20,6 +20,34 @@ const Languages = ({ label, maxLanguages }) => {
         setContentKey(CONTENT_KEY, {...response})
     }
 
+    const clamp = (num, min, max) => {
+        return num <= min 
+            ? min 
+            : num >= max 
+            ? max 
+            : num    
+    }
+
+    const getRandomColor = () => {
+        let colors = [0, 0, 0]
+
+        let clamps = {
+            main: [250, 255],
+            secondary: [0, 255]
+        }
+
+        let mainColor = (Math.round(Math.random() * colors.length-1))
+        
+        let newColors = colors.map((color, index) => {
+            if(index === mainColor)
+                return Math.round(Math.random() * clamps.main[1] - clamps.main[0]) + clamps.main[0]
+            else   
+                return Math.round(Math.random() * clamps.secondary[1] - clamps.secondary[0]) + clamps.secondary[0]
+        })
+
+        return newColors
+    }
+
     const getPieChartData = () => {
         const labels = [], data = [], backgroundColor = [], borderColor = []
 
@@ -29,7 +57,7 @@ const Languages = ({ label, maxLanguages }) => {
             maxLanguages = Math.min(maxLanguages, Object.keys(content.languages.data).length)
 
         for(let i = 0; i < maxLanguages; i++) {
-            let r = Math.floor(Math.random() * 255), g = Math.floor(Math.random() * 255), b = Math.floor(Math.random() * 255);
+            let [r, b, g] = getRandomColor()
             let currLabel = Object.keys(content.languages.data)[i]
             labels.push(currLabel)
             data.push(content.languages.data[currLabel])
