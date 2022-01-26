@@ -3,7 +3,7 @@ import { fetchURL } from '../../functions/fetchURL'
 import { GithubScraperContext } from '../..'
 import '../index.css'
 
-const Contributors = ({ label, maxDisplayed }) => {
+const Contributors = ({ label, imageSize, maxDisplayed, showAvatar, showHandle }) => {
     const CONTENT_KEY = `contributors`
     let {content, setContentKey, githubAPI} = useContext(GithubScraperContext)
     githubAPI.setContentKey(CONTENT_KEY)
@@ -31,7 +31,7 @@ const Contributors = ({ label, maxDisplayed }) => {
             {label && <div className='github-scraper-component-label'>{label}</div>}
             <div className='github-scraper-component-content'>
                 {getContributorsWithLimit().map(contributor => {
-                    return <ContributorMiniature data={contributor} />
+                    return <ContributorMiniature imageSize={imageSize} showAvatar={showAvatar} showHandle={showHandle} data={contributor} />
                 })}
 
                 {getContributorsWithLimit().length < content[CONTENT_KEY].data.length && <>
@@ -47,13 +47,16 @@ const Contributors = ({ label, maxDisplayed }) => {
 Contributors.defaultProps = {
     label: null,
     maxDisplayed: 7,
+    showAvatar: true,
+    showHandle: false,
+    imageSize: 64,
 }
 
-const ContributorMiniature = ({ data }) => {
+const ContributorMiniature = ({ data, imageSize, showAvatar, showHandle }) => {
     return (<>
         <div key={data.id} className='contributor-miniature'>
-            <div className='contributor-miniature-image'><img src={data.avatar_url} width={32} /></div>
-            <div className='contributor-miniature-username'>{data.login}</div>
+            {showAvatar && <div className='contributor-miniature-image'><img src={data.avatar_url} width={imageSize} /></div>}
+            {showHandle && <div className='contributor-miniature-username'>{data.login}</div>}
         </div>
     </>)
 }
