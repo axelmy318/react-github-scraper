@@ -20,3 +20,17 @@
     padding: 5px 10px;
     font-size: 70%;
 }
+
+.component-contributors .github-scraper-component-content {
+    border-collapse: collapse;
+    box-sizing: border-box;
+    display: block;
+    line-height: 18px;
+    overflow-wrap: break-word;
+}
+
+.contributor-miniature {
+    margin: 3px;
+    display: inline-block;
+    text-align: center;
+}
