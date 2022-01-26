@@ -22,14 +22,24 @@ const Example = () => {
             repository='react-github-scraper' 
             branch='master'
         >
-            <Languages label='Languages' />
-            <StargazersCount label='Star count' />
+            <StargazersCount prefix="⭐&nbsp;" label={'Stargazers count'} />
+            <Languages label={'Languages'} />
+            <Topics label={'Topics'} />
+            <Contributors label={'Contributors'} />
+            <PushedAt label={'Last push'} />
+            <Size label={'Size'} />
         </GithubScraper>
     )
 }
 
+
 export default Example
 ```
+
+## Screenshots
+Here is what you can get by mixing some of your own CSS with the example in the "Usage" section
+
+![screenshot1](https://i.imgur.com/AqfIWku.png)
 
 ## API ✔
 Coming soon
