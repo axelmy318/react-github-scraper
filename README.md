@@ -5,7 +5,7 @@ Provides multiple customizable components to automatically load and display GitH
 ## Installation
 `npm i react-github-scraper`
 
-## Demo 👀
+## Demo & API 👀
 
 [https://axelmy-projects-showcase.firebaseapp.com/react-github-scraper](https://axelmy-projects-showcase.firebaseapp.com/react-github-scraper) (...with code 😉)
 
@@ -40,6 +40,3 @@ export default Example
 Here is what you can get by mixing some of your own CSS with the example in the "Usage" section
 
 ![screenshot1](https://i.imgur.com/AqfIWku.png)
-
-## API ✔
-Coming soon

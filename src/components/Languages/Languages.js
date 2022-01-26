@@ -8,7 +8,7 @@ import { Pie } from 'react-chartjs-2';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-const Languages = ({ label, maxLanguages }) => {
+const Languages = ({ label, maxDisplayed }) => {
     const CONTENT_KEY = `languages`
     let {content, setContentKey, githubAPI} = useContext(GithubScraperContext)
     githubAPI.setContentKey(CONTENT_KEY)
@@ -51,12 +51,12 @@ const Languages = ({ label, maxLanguages }) => {
     const getPieChartData = () => {
         const labels = [], data = [], backgroundColor = [], borderColor = []
 
-        if(maxLanguages === null)
-            maxLanguages = Object.keys(content.languages.data).length
+        if(maxDisplayed === null)
+            maxDisplayed = Object.keys(content.languages.data).length
         else
-            maxLanguages = Math.min(maxLanguages, Object.keys(content.languages.data).length)
+            maxDisplayed = Math.min(maxDisplayed, Object.keys(content.languages.data).length)
 
-        for(let i = 0; i < maxLanguages; i++) {
+        for(let i = 0; i < maxDisplayed; i++) {
             let [r, b, g] = getRandomColor()
             let currLabel = Object.keys(content.languages.data)[i]
             labels.push(currLabel)
@@ -88,7 +88,7 @@ const Languages = ({ label, maxLanguages }) => {
 
 Languages.defaultProps = {
     label: null,
-    maxLanguages: 7,
+    maxDisplayed: 7,
 }
 
 export default Languages
