@@ -19,7 +19,6 @@ const Topics = ({ label }) => {
         {content[CONTENT_KEY] !== null && content[CONTENT_KEY].success && <>
             {label && <div className='github-scraper-component-label'>{label}</div>}
             <div className='github-scraper-component-content' style={{fontSize: '130%'}}>
-                {console.log(content[CONTENT_KEY].data.topics)}
                 {content[CONTENT_KEY].data.topics.map(topic => <span className='github-scraper-topic'>{topic}</span>)}
             </div>
         </>}
