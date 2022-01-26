@@ -34,3 +34,10 @@
     display: inline-block;
     text-align: center;
 }
+
+.component-contributors .github-scraper-component-content > button {
+    background-color: transparent;
+    border: none;
+    text-decoration: underline;
+    color: skyblue;
+}

@@ -35,6 +35,7 @@ const Contributors = ({ label, imageSize, maxDisplayed, showAvatar, showHandle }
                 })}
 
                 {getContributorsWithLimit().length < content[CONTENT_KEY].data.length && <>
+                    <br />
                     <button onClick={() => setShowMore(true)}>
                         {`${content[CONTENT_KEY].data.length-getContributorsWithLimit().length} more...`}
                     </button>
