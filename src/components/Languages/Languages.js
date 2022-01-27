@@ -13,7 +13,7 @@ const Languages = ({ label, maxDisplayed }) => {
     let {content, setContentKey, githubAPI} = useContext(GithubScraperContext)
     githubAPI.setContentKey(CONTENT_KEY)
 
-    if(content[CONTENT_KEY] === undefined || content[CONTENT_KEY] === null)
+    if(content[CONTENT_KEY] === undefined || content[CONTENT_KEY] === null) 
         fetchURL(githubAPI.getEndpoint(), (response) => fillData(response))
 
     const fillData = response => {

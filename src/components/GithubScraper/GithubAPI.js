@@ -12,6 +12,7 @@ class GithubAPI {
     repository = ''
     branch = ''
     contentKey=''
+    fetched=false
 
     constructor(username, repository, branch) {
         this.username = username
@@ -29,7 +30,10 @@ class GithubAPI {
         target = target.replace('__BRANCH__', this.branch)
         return target
     }
+
     getEndpoint = () => {
+        if(this.fetched) return null
+        
         let foundEndpoint = null
         let inSection = null
 
@@ -45,7 +49,7 @@ class GithubAPI {
         })
         
         const url = `${this.LINK_BOOK.base}${this.LINK_BOOK[inSection].base}${this.LINK_BOOK[inSection][foundEndpoint]}`
-
+        this.fetched = true
         return this.replaceWithUserData(url)
     }
 }
