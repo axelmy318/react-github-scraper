@@ -36,9 +36,11 @@ const Example = () => {
 export default Example
 ```
 
+
 ## Configuration
 
-To know what is the targeted repository, you have to wrap your components into `<GithubScraper>` and pass it the `username`, `repository`, and optionally `branch` as an object to the `value` prop.
+To know what is the targeted repository, you have to wrap your components into `<GithubScraper>` and pass it the `username`, `repository`, and optionally `branch` as props.
+
 
 ### Common props
 - `label`: every components has it. It defines the title written above the data
@@ -49,6 +51,7 @@ To know what is the targeted repository, you have to wrap your components into `
 Here is what you can get by mixing some of your own CSS with the example in the "Usage" section
 
 ![screenshot1](https://i.imgur.com/AqfIWku.png)
+
 
 ## Todos
 - [x] Create a wrapper to provide the github repository only once
