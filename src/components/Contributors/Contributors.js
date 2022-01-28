@@ -31,8 +31,8 @@ const Contributors = ({ label, imageSize, maxDisplayed, showAvatar, showHandle }
         {content[CONTENT_KEY] !== null && content[CONTENT_KEY].success && <>
             {label && <div className='github-scraper-component-label'>{label}</div>}
             <div className='github-scraper-component-content'>
-                {getContributorsWithLimit().map(contributor => {
-                    return <ContributorMiniature imageSize={imageSize} showAvatar={showAvatar} showHandle={showHandle} data={contributor} />
+                {getContributorsWithLimit().map((contributor, index) => {
+                    return <ContributorMiniature key={index} imageSize={imageSize} showAvatar={showAvatar} showHandle={showHandle} data={contributor} />
                 })}
 
                 {getContributorsWithLimit().length < content[CONTENT_KEY].data.length && <>
