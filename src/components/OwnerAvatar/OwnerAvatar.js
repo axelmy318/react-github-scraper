@@ -15,7 +15,7 @@ const OwnerAvatar = ({ label, imageSize }) => {
         setContentKey(CONTENT_KEY, {...response})
     }
 
-    return (<div className='github-scraper-component component-pushedat'>
+    return (<div className='github-scraper-component component-owneravatar'>
         {content[CONTENT_KEY] !== null && content[CONTENT_KEY].success && <>
             {label && <div className='github-scraper-component-label'>{label}</div>}
             <div className='github-scraper-component-content' style={{fontSize: '130%'}}><img src={content[CONTENT_KEY].data.avatar_url} width={imageSize} /></div>

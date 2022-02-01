@@ -15,7 +15,7 @@ const OwnerFollowersCount = ({ prefix, label }) => {
         setContentKey(CONTENT_KEY, {...response})
     }
 
-    return (<div className='github-scraper-component component-pushedat'>
+    return (<div className='github-scraper-component component-ownerfollowerscount'>
         {content[CONTENT_KEY] !== null && content[CONTENT_KEY].success && <>
             {label && <div className='github-scraper-component-label'>{label}</div>}
             <div className='github-scraper-component-content' style={{fontSize: '130%'}}>{prefix && prefix}{content[CONTENT_KEY].data.followers}</div>

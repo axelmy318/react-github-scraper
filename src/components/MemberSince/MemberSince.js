@@ -21,7 +21,7 @@ const PushedAt = ({ prefix, label, showAsDate }) => {
         return d.toLocaleString()
     }
 
-    return (<div className='github-scraper-component component-pushedat'>
+    return (<div className='github-scraper-component component-membersince'>
         {content[CONTENT_KEY] !== null && content[CONTENT_KEY].success && <>
             {label && <div className='github-scraper-component-label'>{label}</div>}
             <div className='github-scraper-component-content' style={{fontSize: '130%'}}>
