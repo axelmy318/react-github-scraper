@@ -9,6 +9,21 @@ Provides multiple customizable components to automatically load and display GitH
 
 [https://axelmy-projects-showcase.firebaseapp.com/react-github-scraper](https://axelmy-projects-showcase.firebaseapp.com/react-github-scraper) (...with code 😉)
 
+## Components
+
+- GithubScraper
+    - Contributors
+    - StargazersCount
+    - WatchersCount
+    - Topics
+    - Languages
+    - ForksCount
+    - MemberSince
+    - OwnerAvatar
+    - OwnerFollowersCount
+    - PublicReposCount
+    - PushedAt
+    - Size
 
 ## Usage 💻
 

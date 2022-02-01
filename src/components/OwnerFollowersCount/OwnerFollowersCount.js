@@ -3,7 +3,7 @@ import { fetchURL } from '../../functions/fetchURL'
 import { GithubScraperContext } from '../..'
 import '../index.css'
 
-const OwnerAvatar = ({ label, imageSize }) => {
+const OwnerFollowersCount = ({ prefix, label }) => {
     const CONTENT_KEY = `user`
     let {content, setContentKey, githubAPI} = useContext(GithubScraperContext)
     githubAPI.setContentKey(CONTENT_KEY)
@@ -18,14 +18,14 @@ const OwnerAvatar = ({ label, imageSize }) => {
     return (<div className='github-scraper-component component-pushedat'>
         {content[CONTENT_KEY] !== null && content[CONTENT_KEY].success && <>
             {label && <div className='github-scraper-component-label'>{label}</div>}
-            <div className='github-scraper-component-content' style={{fontSize: '130%'}}><img src={content[CONTENT_KEY].data.avatar_url} width={imageSize} /></div>
+            <div className='github-scraper-component-content' style={{fontSize: '130%'}}>{prefix && prefix}{content[CONTENT_KEY].data.followers}</div>
         </>}
     </div>)
 }
 
-OwnerAvatar.defaultProps = {
+OwnerFollowersCount.defaultProps = {
     label: null,
-    imageSize: 64,
+    prefix: "",
 }
 
-export default OwnerAvatar
+export default OwnerFollowersCount

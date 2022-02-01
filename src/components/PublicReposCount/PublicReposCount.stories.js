@@ -1,11 +1,11 @@
 import React from 'react';
 
-import { OwnerFollowers } from '../..';
+import { PublicReposCount } from '../..';
 import GithubScraper from '../..'
 
 export default {
-  title: 'OwnerFollowers/OwnerFollowers',
-  component: OwnerFollowers,
+  title: 'PublicReposCount/PublicReposCount',
+  component: PublicReposCount,
   argTypes: {
     showChars: { control: 'number' }
   },
@@ -15,7 +15,7 @@ const Template = (args) => {
     return (<>
         <div style={{width: '300px'}}>
             <GithubScraper {...args.github}>
-                <OwnerFollowers {...args.component} />
+                <PublicReposCount {...args.component} />
             </GithubScraper>
         </div>
     </>)
