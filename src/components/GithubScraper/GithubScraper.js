@@ -6,7 +6,8 @@ const GithubScraper = ({ username, repository, branch, children }) => {
     const [ content, setContent ] = useState({
         repository: null,
         languages: null,
-        contributors: null
+        contributors: null,
+        user: null
     })
     
     const setContentKey = (key, value) => {
