@@ -5,8 +5,12 @@ class GithubAPI {
             base: '/repos',
             repository: '/__USERNAME__/__REPOSITORY__',
             languages: '/__USERNAME__/__REPOSITORY__/languages',
-            contributors: '/__USERNAME__/__REPOSITORY__/contributors',
+            contributors: '/__USERNAME__/__REPOSITORY__/contributors'
         },
+        users: {
+            base: '/users',
+            user: '/__USERNAME__'
+        }
     }
     username = ''
     repository = ''

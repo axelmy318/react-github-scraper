@@ -1,6 +1,6 @@
 {
   "name": "react-github-scraper",
-  "version": "1.5.6",
+  "version": "1.6.0",
   "description": "Provides multiple customizable components to display data about a github repository using simply the repository name",
   "scripts": {
     "rollup": "rollup -c",
