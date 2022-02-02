@@ -12,18 +12,20 @@ Provides multiple customizable components to automatically load and display GitH
 ## Components
 
 - GithubScraper
-    - Contributors
-    - StargazersCount
-    - WatchersCount
-    - Topics
-    - Languages
-    - ForksCount
-    - MemberSince
-    - OwnerAvatar
-    - OwnerFollowersCount
-    - PublicReposCount
-    - PushedAt
-    - Size
+    - Repository related
+        - Contributors
+        - ForksCount
+        - Languages
+        - PushedAt
+        - Size
+        - StargazersCount
+        - Topics
+        - WatchersCount
+    - User related
+        - MemberSince
+        - OwnerAvatar
+        - OwnerFollowersCount
+        - PublicReposCount
 
 ## Usage 💻
 
