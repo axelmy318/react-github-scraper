@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { GithubScraperSourceContext, GithubScraperContext } from '../../.'
 import GithubAPI from '../GithubScraper/GithubAPI'
 
@@ -9,6 +9,17 @@ const GithubScraper = ({ username, repository, branch, children }) => {
         contributors: null,
         user: null
     })
+
+    useEffect(() => {
+        setContent({
+            repository: null,
+            languages: null,
+            contributors: null,
+            user: null
+        })
+    }, [username, repository, branch])
+
+    console.log("username", username)
     
     const setContentKey = (key, value) => {
         let newContent = content
