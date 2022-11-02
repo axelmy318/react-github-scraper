@@ -18,8 +18,6 @@ const GithubScraper = ({ username, repository, branch, children }) => {
             user: null
         })
     }, [username, repository, branch])
-
-    console.log("username", username)
     
     const setContentKey = (key, value) => {
         let newContent = content
