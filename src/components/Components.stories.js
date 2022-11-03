@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Languages, ForksCount, Size, StargazersCount, Contributors, PushedAt, WatchersCount } from '..';
+import { Languages, ForksCount, Size, StargazersCount, Contributors, PushedAt, WatchersCount, Commits } from '..';
 import GithubScraper from '..'
 
 export default {
@@ -15,6 +15,7 @@ const Template = (args) => {
     return (<>
         <div style={{width: '300px'}}>
             <GithubScraper {...args.github}>
+                <Commits {...args.component} commitCallback={(commit) => <>{commit.commit.message}</>} />
                 <Languages {...args.component} />
                 <ForksCount {...args.component} />
                 <Size {...args.component} />

@@ -7,7 +7,8 @@ const GithubScraper = ({ username, repository, branch, children }) => {
         repository: null,
         languages: null,
         contributors: null,
-        user: null
+        user: null,
+        commits: null,
     })
 
     useEffect(() => {
@@ -15,7 +16,8 @@ const GithubScraper = ({ username, repository, branch, children }) => {
             repository: null,
             languages: null,
             contributors: null,
-            user: null
+            user: null,
+            commits: null,
         })
     }, [username, repository, branch])
     
