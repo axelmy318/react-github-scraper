@@ -21,6 +21,7 @@ Provides multiple customizable components to automatically load and display GitH
         - StargazersCount
         - Topics
         - WatchersCount
+        - Commits
     - User related
         - MemberSince
         - OwnerAvatar
@@ -30,7 +31,13 @@ Provides multiple customizable components to automatically load and display GitH
 ## Usage 💻
 
 ```javascript
-import GithubScraper, { Languages, StargazersCount } from 'react-github-scraper';
+import GithubScraper, { 
+    Languages, 
+    StargazersCount, 
+    Topics, PushedAt, 
+    Contributors, 
+    Size 
+} from 'react-github-scraper';
 
 const Example = () => {
     return (

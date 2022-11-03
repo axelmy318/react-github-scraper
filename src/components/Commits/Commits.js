@@ -18,7 +18,7 @@ const Commits = ({ label, maxDisplayed, commitCallback }) => {
     return (<div className='github-scraper-component component-commits'>
         {content[CONTENT_KEY] !== null && content[CONTENT_KEY].success && <>
             {label && <div className='github-scraper-component-label'>{label}</div>}
-            <div className='github-scraper-component-content'>{content[CONTENT_KEY].data.map((commit) => commitCallback(commit))}</div>
+            <div className='github-scraper-component-content'>{content[CONTENT_KEY].data.map((commit, index, array) => commitCallback(commit, index, array))}</div>
         </>}
     </div>)
 }
@@ -26,7 +26,7 @@ const Commits = ({ label, maxDisplayed, commitCallback }) => {
 Commits.defaultProps = {
     label: null,
     maxDisplayed: 7,
-    commitCallback: () => {}
+    commitCallback: (commit, index, array) => {}
 }
 
 export default Commits
