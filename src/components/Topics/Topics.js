@@ -3,7 +3,7 @@ import { fetchURL } from '../../functions/fetchURL'
 import { GithubScraperContext } from '../..'
 import '../index.css'
 
-const Topics = ({ label }) => {
+const Topics = ({ label, topicCallback }) => {
     const CONTENT_KEY = `repository`
     let {content, setContentKey, githubAPI} = useContext(GithubScraperContext)
     githubAPI.setContentKey(CONTENT_KEY)
@@ -24,7 +24,9 @@ const Topics = ({ label }) => {
             {label && <div className='github-scraper-component-label'>{label}</div>}
             <div className='github-scraper-component-content' style={{fontSize: '130%'}}>
                 { content[CONTENT_KEY].data.topics.length > 0
-                ? content[CONTENT_KEY].data.topics.map((topic, index) => <span key={index} className='github-scraper-topic clickable' onClick={() => sendToTopic(topic)}>{topic}</span>)
+                ? topicCallback
+                   ? content[CONTENT_KEY].data.topics.map((topic, index, topics) => <span onClick={() => sendToTopic(topic)}>{topicCallback(topic, index, topics)}</span>)
+                   : content[CONTENT_KEY].data.topics.map((topic, index) => <span key={index} className='github-scraper-topic clickable' onClick={() => sendToTopic(topic)}>{topic}</span>)
                 : <i>This repository has no topics</i>
             }
             </div>
@@ -34,6 +36,7 @@ const Topics = ({ label }) => {
 
 Topics.defaultProps = {
     label: null,
+    topicCallback: null,
 }
 
 export default Topics
