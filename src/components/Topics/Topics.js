@@ -25,7 +25,7 @@ const Topics = ({ label, topicCallback }) => {
             <div className='github-scraper-component-content' style={{fontSize: '130%'}}>
                 { content[CONTENT_KEY].data.topics.length > 0
                 ? topicCallback
-                   ? content[CONTENT_KEY].data.topics.map((topic, index, topics) => <span onClick={() => sendToTopic(topic)}>{topicCallback(topic, index, topics)}</span>)
+                   ? content[CONTENT_KEY].data.topics.map((topic, index, topics) => <span key={index} onClick={() => sendToTopic(topic)}>{topicCallback(topic, index, topics)}</span>)
                    : content[CONTENT_KEY].data.topics.map((topic, index) => <span key={index} className='github-scraper-topic clickable' onClick={() => sendToTopic(topic)}>{topic}</span>)
                 : <i>This repository has no topics</i>
             }
