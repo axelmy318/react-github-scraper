@@ -15,7 +15,7 @@ const Template = (args) => {
     return (<>
         <div style={{width: '300px'}}>
             <GithubScraper {...args.github}>
-                <Commits {...args.component} commitCallback={(commit) => <>{commit.commit.message}</>} />
+                <Commits {...args.component} commitCallback={(commit) => <>{commit.commit.message}</>} maxDisplayed={2} />
                 <Languages {...args.component} />
                 <ForksCount {...args.component} />
                 <Size {...args.component} />
