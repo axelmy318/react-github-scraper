@@ -1,6 +1,7 @@
+
 # react-github-scraper 👋
 
-Provides multiple customizable components to automatically load and display GitHub repositories data by just passing the targeted repository!
+Provides multiple customizable components to automatically load and display data from the Github API by just passing the targeted repository!
 
 ## Installation
 `npm i react-github-scraper`
