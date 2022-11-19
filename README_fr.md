@@ -8,12 +8,12 @@ Inclut plusieurs componsants customisables pour automatiquement charger et affic
 
 ## Démo & API 👀
 
-[https://axelmy-projects-showcase.firebaseapp.com/react-github-scraper](https://axelmy-projects-showcase.firebaseapp.com/react-github-scraper) (...avec du code 😉)
+[https://axelmry.com/react-github-scraper](https://axelmry.com/react-github-scraper) (...avec du code 😉)
 
-## Components
+## Composants
 
 - GithubScraper
-    - Repository related
+    - Spécifique au dépôt
         - Contributors
         - ForksCount
         - Languages
@@ -23,7 +23,7 @@ Inclut plusieurs componsants customisables pour automatiquement charger et affic
         - Topics
         - WatchersCount
         - Commits
-    - User related
+    - Spécifique à l'utilisateur
         - MemberSince
         - OwnerAvatar
         - OwnerFollowersCount

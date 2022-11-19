@@ -8,7 +8,7 @@ Provides multiple customizable components to automatically load and display data
 
 ## Demo & API 👀
 
-[https://axelmy-projects-showcase.firebaseapp.com/react-github-scraper](https://axelmy-projects-showcase.firebaseapp.com/react-github-scraper) (...with code 😉)
+[https://axelmry.com/react-github-scraper](https://axelmry.com/react-github-scraper) (...with code 😉)
 
 ## Components
 
