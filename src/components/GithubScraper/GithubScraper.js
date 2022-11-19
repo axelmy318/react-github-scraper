@@ -1,8 +1,9 @@
+import moment from 'moment'
 import React, { useEffect, useState } from 'react'
 import { GithubScraperSourceContext, GithubScraperContext } from '../../.'
 import GithubAPI from '../GithubScraper/GithubAPI'
 
-const GithubScraper = ({ username, repository, branch, children }) => {
+const GithubScraper = ({ username, repository, branch, children, lang }) => {
     const [ content, setContent ] = useState({
         repository: null,
         languages: null,
@@ -10,6 +11,10 @@ const GithubScraper = ({ username, repository, branch, children }) => {
         user: null,
         commits: null,
     })
+
+    useEffect(() => {
+        moment.locale(lang)
+    }, [lang])
 
     useEffect(() => {
         setContent({
@@ -43,7 +48,8 @@ const GithubScraper = ({ username, repository, branch, children }) => {
 GithubScraper.defaultProps = {
     username: '',
     repository: '',
-    branch: ''
+    branch: '',
+    lang: 'en',
 }
 
 export default GithubScraper

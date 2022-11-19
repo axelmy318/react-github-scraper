@@ -45,7 +45,8 @@ const Example = () => {
         <GithubScraper 
             username='axelmy318' 
             repository='react-github-scraper' 
-            branch='master'
+            branch='master' // default 'main'
+            lang='en' // default 'en'. Defines the language used for dates and such...
         >
             <StargazersCount prefix="⭐&nbsp;" label={'Stargazers count'} />
             <Languages label={'Languages'} />
