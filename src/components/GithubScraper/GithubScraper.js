@@ -2,6 +2,7 @@ import moment from 'moment'
 import React, { useEffect, useState } from 'react'
 import { GithubScraperSourceContext, GithubScraperContext } from '../../.'
 import GithubAPI from '../GithubScraper/GithubAPI'
+import 'moment/dist/locale/fr'
 
 const GithubScraper = ({ username, repository, branch, children, lang }) => {
     const [ content, setContent ] = useState({
