@@ -14,7 +14,9 @@ const GithubScraper = ({ username, repository, branch, children, lang }) => {
     })
 
     useEffect(() => {
-        moment.locale(lang)
+        if(lang) {
+            moment.locale(lang)
+        } 
     }, [lang])
 
     useEffect(() => {
@@ -50,7 +52,6 @@ GithubScraper.defaultProps = {
     username: '',
     repository: '',
     branch: '',
-    lang: 'en',
 }
 
 export default GithubScraper
