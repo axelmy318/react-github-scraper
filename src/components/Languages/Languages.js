@@ -29,7 +29,7 @@ const Languages = ({ label, maxDisplayed, translucid, gradientColors, borderColo
                 .setColorGradient(...gradientColors)
                 .setMidpoint(nbOutput - 2)
                 .getColors()))
-            colors.push(gradientColors[1])
+            colors.push(gradientColors[gradientColors.length - 1])
         } else 
             colors = gradientColors
         
