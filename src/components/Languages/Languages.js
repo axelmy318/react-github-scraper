@@ -21,49 +21,18 @@ const Languages = ({ label, maxDisplayed, translucid, gradientColors, borderColo
         setContentKey(CONTENT_KEY, {...response})
     }
 
-    const clamp = (num, min, max) => {
-        return num <= min 
-            ? min 
-            : num >= max 
-            ? max 
-            : num    
-    }
-
-    const getRandomColor = () => {
-        let colors = [0, 0, 0]
-
-        let clamps = {
-            main: [250, 255],
-            secondary: [0, 255]
-        }
-
-        let mainColor = (Math.round(Math.random() * colors.length-1))
-        
-        let newColors = colors.map((color, index) => {
-            if(index === mainColor)
-                return Math.round(Math.random() * clamps.main[1] - clamps.main[0]) + clamps.main[0]
-            else   
-                return Math.round(Math.random() * clamps.secondary[1] - clamps.secondary[0]) + clamps.secondary[0]
-        })
-
-        return newColors
-    }
-
     const getColorGradient = (nbOutput) => {
         let colors = []
         if(nbOutput > gradientColors.length) {
-            console.log("dynamic colors")
             colors.push(gradientColors[0])
             colors.push(...(new Gradient()
                 .setColorGradient(...gradientColors)
                 .setMidpoint(nbOutput - 2)
                 .getColors()))
             colors.push(gradientColors[1])
-        } else {
-            console.log("static colors")
+        } else 
             colors = gradientColors
-        }
-        console.log(colors)
+        
         return colors
     } 
 
