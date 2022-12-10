@@ -5,10 +5,11 @@ import '../index.css'
 
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
+import Gradient from 'javascript-color-gradient'
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-const Languages = ({ label, maxDisplayed }) => {
+const Languages = ({ label, maxDisplayed, translucid, gradientColors, borderColor }) => {
     const CONTENT_KEY = `languages`
     let {content, setContentKey, githubAPI} = useContext(GithubScraperContext)
     githubAPI.setContentKey(CONTENT_KEY)
@@ -48,21 +49,30 @@ const Languages = ({ label, maxDisplayed }) => {
         return newColors
     }
 
+    const getColorGradient = (nbOutput) => {
+        const gradientArray = new Gradient()
+            .setColorGradient(...gradientColors)
+            .setMidpoint(nbOutput)
+            .getColors()
+
+        return gradientArray
+    } 
+
     const getPieChartData = () => {
-        const labels = [], data = [], backgroundColor = [], borderColor = []
+        const labels = [], data = [], backgroundColors = [], borderColors = []
 
-        if(maxDisplayed === null)
-            maxDisplayed = Object.keys(content.languages.data).length
-        else
-            maxDisplayed = Math.min(maxDisplayed, Object.keys(content.languages.data).length)
+        maxDisplayed = maxDisplayed ? Math.min(maxDisplayed, Object.keys(content.languages.data).length) : Object.keys(content.languages.data).length
 
+        const colors = getColorGradient(maxDisplayed)
+        
         for(let i = 0; i < maxDisplayed; i++) {
-            let [r, b, g] = getRandomColor()
             let currLabel = Object.keys(content.languages.data)[i]
             labels.push(currLabel)
             data.push(content.languages.data[currLabel])
-            backgroundColor.push(`rgba(${r}, ${g}, ${b}, .2)`)
-            borderColor.push(`rgb(${r}, ${g}, ${b})`)
+
+            let hexColor = colors[i]
+            backgroundColors.push(translucid ? `${hexColor}6e` : `${hexColor}`)
+            borderColors.push(borderColor ?? `${hexColor}`)
         }
 
         return {
@@ -71,8 +81,8 @@ const Languages = ({ label, maxDisplayed }) => {
                 {
                     label: 'Bytes of code',
                     data,
-                    backgroundColor,
-                    borderColor,
+                    backgroundColor: backgroundColors,
+                    borderColor: borderColors,
                 }
             ]
         }
@@ -89,6 +99,9 @@ const Languages = ({ label, maxDisplayed }) => {
 Languages.defaultProps = {
     label: null,
     maxDisplayed: 7,
+    translucid: true,
+    gradientColors: ["#91e0ff", "#e9446a"],
+    borderColor: null,
 }
 
 export default Languages
