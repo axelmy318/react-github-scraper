@@ -29,7 +29,8 @@ Primary.args = {
         branch:'master',
     },
     component: {
-        label: 'Test'
+        label: 'Test',
+        gradientColors: ["#03c9d7", "#fb9678"]
     }
 };
 

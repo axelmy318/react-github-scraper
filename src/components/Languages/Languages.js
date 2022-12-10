@@ -50,12 +50,21 @@ const Languages = ({ label, maxDisplayed, translucid, gradientColors, borderColo
     }
 
     const getColorGradient = (nbOutput) => {
-        const gradientArray = new Gradient()
-            .setColorGradient(...gradientColors)
-            .setMidpoint(nbOutput)
-            .getColors()
-
-        return gradientArray
+        let colors = []
+        if(nbOutput > gradientColors.length) {
+            console.log("dynamic colors")
+            colors.push(gradientColors[0])
+            colors.push(...(new Gradient()
+                .setColorGradient(...gradientColors)
+                .setMidpoint(nbOutput - 2)
+                .getColors()))
+            colors.push(gradientColors[1])
+        } else {
+            console.log("static colors")
+            colors = gradientColors
+        }
+        console.log(colors)
+        return colors
     } 
 
     const getPieChartData = () => {
@@ -100,7 +109,7 @@ Languages.defaultProps = {
     label: null,
     maxDisplayed: 7,
     translucid: true,
-    gradientColors: ["#91e0ff", "#e9446a"],
+    gradientColors: ["#91e0ff", "#e9446a", "#ff0000"],
     borderColor: null,
 }
 
