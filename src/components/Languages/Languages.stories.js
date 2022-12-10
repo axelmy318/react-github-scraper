@@ -30,7 +30,7 @@ Primary.args = {
     },
     component: {
         label: 'Test',
-        gradientColors: ["#03c9d7", "#fb9678"]
+        gradientColors: ["#03c9d7", "#fb9678", "#ff0000"]
     }
 };
 
